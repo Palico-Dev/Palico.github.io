@@ -6,23 +6,18 @@ theme = 'Paper'
   color = 'linen'                           # linen, wheat, gray, light
 
   # header social icons
-  twitter = 'YOUR_TWITTER_ID'               # twitter.com/YOUR_TWITTER_ID
-  github = 'YOUR_GITHUB_ID'                 # github.com/YOUR_GITHUB_ID
-  instagram = 'YOUR_INSTAGRAM_ID'           # instagram.com/YOUR_INSTAGRAM_ID
-  linkedin = 'YOUR_LINKEDIN_ID'             # linkedin.com/in/YOUR_LINKEDIN_ID
-  mastodon = 'YOUR_MASTODON_LINK'           # e.g. 'https://mastodon.instance/@xxx'
-  threads = '@YOUR_THREADS_ID'              # threads.net/@YOUR_THREADS_ID
-  bluesky = 'YOUR_BLUESKY_ID'               # https://bsky.app/profile/YOUR_BLUESKY_ID
+  github = 'Palico-Dev'                 # github.com/YOUR_GITHUB_ID
+  linkedin = 'pengyu-ren-b0b9bb335'             # linkedin.com/in/YOUR_LINKEDIN_ID
   rss = true                                # show rss icon
 
   # home page profile
-  avatar = 'GRAVATAR_EMAIL'                 # gravatar email or image url
-  name = 'YOUR_NAME'
-  bio = 'YOUR_BIO'
+  avatar = '/images/palico.jpg'                 # gravatar email or image url
+  name = 'Pengyu Ren(Max)'
+  bio = 'Game Developer & Game Engine Enthusiast. Currently building a 3D Engine.'
 
 
   # misc
-  disableHLJS = true                        # disable highlight.js
+  disableHLJS = false                        # disable highlight.js
   disablePostNavigation = true              # disable post navigation
   monoDarkIcon = true                       # show monochrome dark mode icon
   gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
@@ -33,7 +28,7 @@ theme = 'Paper'
   appleTouchIcon = "apple-touch-icon.png"   # customize the default Apple touch icon
 
   # RTL supprot
-  direction = "rtl"                         # RTL support for Right-to-left languages
+  direction = "ltr"                         # RTL support for Right-to-left languages
 
   # giscus
 [params.giscus]
