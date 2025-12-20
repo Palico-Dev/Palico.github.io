@@ -1,6 +1,7 @@
 title = 'Palico-GameProgrammer'
 baseURL = 'https://palico.dev/'
 theme = 'Paper'
+canonifyURLs = true
 
 [params]
   # color style
