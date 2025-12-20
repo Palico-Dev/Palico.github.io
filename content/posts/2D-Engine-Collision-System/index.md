@@ -5,8 +5,6 @@ title = '2D Engine Collision System'
 
 +++
 
-# 2D Engine Collision System
-
 This blog aim to describe how to write a Collision System using c++. It's not the very advanced industry solution. Only use it to learn the basic idea and try to uncover the logic.
 
 ---
@@ -274,7 +272,7 @@ Easy math. Easy struct. And it can work perfectly for boxes. But it do have some
 
 The idea is very easy that every one can understand: **if you are able to draw a line to separate two polygons, then they do not collide.**
 
-<img src="C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130145924489.png" width="300">
+<img src="SAT_BOXBOX.png" alt="SAT" style="zoom:50%;" />
 
 It can handle all kind of **convex** shapes which is enough for our system.
 
@@ -284,7 +282,7 @@ There is another words to describe SAT: **If two convex objects are not penetrat
 
 Then things become simple. We just need to get every edges, calculate the vertical line, get the projection of two shapes which will be a line, check if these two line overlapped. If they do, we move on to the next edge. If not, congratulations, they are not colliding. When we traverse all the edges and couldn't find a success, then they are colliding.
 
-<img src="C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130152841389.png" width="400">
+<img src="Projection.png" alt="Projection" style="zoom:50%;" />
 
 Before the SAT logic, we need some helper functions.
 
@@ -462,7 +460,7 @@ CollisionMath::CollisionInfo CollisionMath::CircleCircle(CircleCollider* a, Circ
 
 However the box to circle is different. Let's see the image below:
 
-<img src="C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130155352896.png" width="400">
+<img src="SAT_BOXCIRCLE.png" alt="BoxCircle" style="zoom:50%;" />
 
 They are not colliding. But you cannot find a line perpendicular to the rectangles' edges. 
 
@@ -673,7 +671,7 @@ We have three type of events in total. OnEnter, OnStay and OnExit.
 
 The logic is here:
 
-![image-20251130163138538](C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130163138538.png)
+![Events](Events.png)
 
 So we also need to cache the last frame results and update at the end of Update:
 
@@ -891,7 +889,7 @@ void CollisionSystem::FireEvents()
 
 Okey, lets see the result.
 
-![image-20251130175322710](C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130175322710.png)
+![Output_01](Output_01.png)
 
 Seems the answer is right.
 
@@ -969,11 +967,11 @@ In the Initialize():
 
 We generate 100 colliders and add a timer in Detect() to figure out how long it takes.
 
-![image-20251130175711197](C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130175711197.png)
+![Output_03](Output_03.png)
 
 That's okey. But what if we increase 100 to 1000?
 
-![image-20251130175810167](C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130175810167.png)
+![Output_04.png](Output_04.png)
 
 Oh no. This is unacceptable. If we want to achieve 60FPS, every frame only have 16ms to use including Collision, Rendering, Gameplay and so on.
 
@@ -1060,7 +1058,7 @@ Now we can compare other solution results with it.
 
 The basic idea of spatial hashing is divide the whole scene into small cells. So in detecting we only need to detect colliders in the same cells(bucket).
 
-![image-20251130183854316](C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130183854316.png)
+![SpacialHashing.png](SpacialHashing.png)
 
 A very common circumstance is that a collider is crossing 2 buckets. Then we need to add it into both two buckets.
 
@@ -1152,13 +1150,13 @@ std::cout << "Spatial hash: " << Time::Instance().TotalTimeMill() - currentMillS
 
 There we go, let's see the result.
 
-![image-20251130184825164](C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130184825164.png)
+![Output_05.png](Output_05.png)
 
 #### Quadtree
 
 Different with spatial hashing, quadtree will be more dynamic. It will grow based on the density of objects. For example we see the limitation is 5. Then when the children are more than five, it will divide it self again. The common quadtree will set a Max_Depth to limit the divide too deep. Instead of that, we can use a minimum cell size to control it as well. 
 
-![image-20251130192656829](C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130192656829.png)
+![QuadTree.png](QuadTree.png)
 
 We also need to create a new class called QuadTree to manage the tree logic
 
@@ -1352,7 +1350,7 @@ std::cout << "Quadtree: " << Time::Instance().TotalTimeMill() - currentMillSecon
 
 Then test:
 
-![image-20251130191905565](C:\Users\Ren\AppData\Roaming\Typora\typora-user-images\image-20251130191905565.png)
+![](Output_06.png)
 
 Okey, seem the spatial hashing is the best, for now.
 
