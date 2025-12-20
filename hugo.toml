@@ -1,4 +1,5 @@
 title = 'Palico-GameProgrammer'
+baseURL = 'https://palico.dev/'
 theme = 'Paper'
 
 [params]
