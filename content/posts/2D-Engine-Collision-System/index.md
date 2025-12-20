@@ -272,7 +272,7 @@ Easy math. Easy struct. And it can work perfectly for boxes. But it do have some
 
 The idea is very easy that every one can understand: **if you are able to draw a line to separate two polygons, then they do not collide.**
 
-<img src="SAT_BOXBOX.png" alt="SAT" style="zoom:50%;" />
+![SAT](SAT_BOXBOX.png)
 
 It can handle all kind of **convex** shapes which is enough for our system.
 
