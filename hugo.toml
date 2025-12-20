@@ -8,10 +8,10 @@ theme = 'Paper'
   # header social icons
   github = 'Palico-Dev'                 # github.com/YOUR_GITHUB_ID
   linkedin = 'pengyu-ren-b0b9bb335'             # linkedin.com/in/YOUR_LINKEDIN_ID
-  rss = true                                # show rss icon
+  rss = false                                # show rss icon
 
   # home page profile
-  avatar = '/images/palico.jpg'                 # gravatar email or image url
+  avatar = 'images/palico.jpg'                 # gravatar email or image url
   name = 'Pengyu Ren(Max)'
   bio = 'Game Developer & Game Engine Enthusiast. Currently building a 3D Engine.'
 
@@ -32,10 +32,6 @@ theme = 'Paper'
 
   # giscus
 [params.giscus]
-  repo = 'YOUR_GISCUS_REPO'                 # see https://giscus.app for more details
-  repoId = 'YOUR_GISCUS_REPO_ID'
-  category = 'YOUR__GISCUS_CATEGORY'
-  categoryId = 'YOUR_GISCUS_CATEGORY_ID'
   mapping = 'pathname'
   theme = 'light'
-  lang = 'zh-CN'
+  lang = 'en-us'
