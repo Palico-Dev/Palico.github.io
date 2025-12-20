@@ -3,6 +3,9 @@ baseURL = 'https://palico.dev/'
 theme = 'Paper'
 canonifyURLs = true
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [params]
   # color style
   color = 'linen'                           # linen, wheat, gray, light
