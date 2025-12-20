@@ -1,6 +1,8 @@
 +++
 date = '2025-12-19T21:41:50-05:00'
 draft = false
+
+categories = ["Game Engine Development", "C++"]
 title = '2D Engine Collision System'
 
 +++
