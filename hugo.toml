@@ -12,7 +12,7 @@ theme = 'Paper'
   rss = false                                # show rss icon
 
   # home page profile
-  avatar = 'images/palico.jpg'                 # gravatar email or image url
+  avatar = '/images/palico.jpg'                 # gravatar email or image url
   name = 'Pengyu Ren(Max)'
   bio = 'Game Developer & Game Engine Enthusiast. Currently building a 3D Engine.'
 
